@@ -34,3 +34,5 @@ To install in an empty directory:
 Usage in any browser on your device of choice (Phone, Tablet &amp; Desktop):
 
 `http://<host IP>/control`
+
+> TIP: You can save the page to your homescreen on mobile devices and it will function like an app.
