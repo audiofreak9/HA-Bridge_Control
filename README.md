@@ -13,6 +13,14 @@ Save the code as index.php on the Apache server in the /var/www/html/ folder. It
   <li>@bwssytems <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> >= v1.1.0</li>
 </ul>
 
+On an updated functioning Linux box install Apache and PHP5:
+
+`$ sudo apt-get install apache2 -y`
+
+`$ sudo apt-get install php5 libapache2-mod-php5 -y`
+
+Download, configure and run as per @bwssystems' ha-bridge <a href="https://github.com/bwssytems/ha-bridge>README</a> 
+
 To install in an empty directory: 
 
 `$ cd /var/www/html/`
@@ -22,3 +30,7 @@ To install in an empty directory:
 `$ cd control`
 
 `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
+
+Usage in any browser on your device of choice (Phone, Tablet &amp; Desktop):
+
+`http://<host IP>/control`
