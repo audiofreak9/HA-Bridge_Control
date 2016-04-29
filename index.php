@@ -85,7 +85,9 @@ $(".btn").click(function() {
   }else{
     percent = dev_per;
     data += 'true';
-    data += ', "bri":' + Math.round(2.55 * dev_per);
+    if(dev_per < 100) {
+      data += ', "bri":' + Math.round(2.55 * dev_per);
+    }
   }
   data += '}';
   $.ajax({
