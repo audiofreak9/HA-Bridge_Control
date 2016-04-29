@@ -1,7 +1,7 @@
 # HA-Bridge_Control
-Phone, Tablet &amp; Desktop <a href="https://github.com/bwssytems/ha-bridge/releases">HA-Bridge</a> device control.
+Phone, Tablet &amp; Desktop <a href="https://github.com/bwssytems/ha-bridge">HA-Bridge</a> device control.
 
-Code written in PHP that allows control of all configured <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> devices by @bwssytems with a phone, tablet or desktop.  It uses twitter bootstrap for mobile compatibility and fluidity.
+Code written in PHP that allows control of all configured <a href="https://github.com/bwssytems/ha-bridge#ha-bridge-usage-and-configuration">ha-bridge</a> devices by @bwssytems with a phone, tablet or desktop.  It uses twitter bootstrap for mobile compatibility and fluidity.
 
 ![alt tag](http://coreyswrite.com/wp-content/uploads/2016/03/X10-Bridge-Control-1.png)
 
