@@ -17,4 +17,8 @@ To install in an empty directory:
 
 $ cd /var/www/html/
 
+$ mkdir control
+
+$ cd /control/
+
 $ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .
