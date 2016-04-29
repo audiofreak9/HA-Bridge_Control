@@ -19,6 +19,6 @@ To install in an empty directory:
 
 `$ sudo mkdir control`
 
-`$ cd /control/`
+`$ cd control`
 
 `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
