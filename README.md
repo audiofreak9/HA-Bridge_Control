@@ -3,6 +3,8 @@ Phone, Tablet &amp; Desktop PHP IoT device control
 
 Code written in PHP that allows control of all configured <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> devices by @bwssytems with a phone, tablet or desktop.  It uses twitter bootstrap for mobile compatibility and fluidity.
 
+![alt tag](http://coreyswrite.com/wp-content/uploads/2016/03/X10-Bridge-Control-1.png)
+
 <h3>Prerequisite components</h3>
 * Linux box, preferably a Raspberry Pi</li>
 * Apache installed</li>
