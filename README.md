@@ -1,5 +1,5 @@
-# PHP-X10-Control_v2
-Phone, Tablet &amp; Desktop PHP X10 control
+# HA-Bridge_Control
+Phone, Tablet &amp; Desktop PHP IoT device control
 
 Code written in PHP that allows control of all configured <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> devices with a phone, tablet or desktop.  
 
@@ -8,7 +8,6 @@ Save the code as index.php on the Apache server in the /var/www/html/ folder. It
 <h3>Prerequisite components</h3>
 <ul>
   <li>Linux box, preferably a Raspberry Pi</li>
-  <li><a href="http://www.heyu.org/">HEYU</a> installed</li>
   <li>Apache installed</li>
   <li>PHP installed</li>
   <li><a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> >= v1.1.0</li>
@@ -18,4 +17,4 @@ To install in an empty directory:
 
 $ cd /var/www/html/
 
-$ sudo git clone https://github.com/audiofreak9/PHP-X10-Control_v2 .
+$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .
