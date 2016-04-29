@@ -36,7 +36,7 @@ array_multisort($deviceTypes, SORT_DESC, $ha_devices);
 //Determine half the device count
 $halfval = ceil(count($ha_devices) / 2);
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
-        $dev_level = round(($ha_devices[$x]["deviceSetValue"] / 255)*100);
+        $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
 ?>
                 <div class="col-sm-4">
                         <div class="row-fluid">
