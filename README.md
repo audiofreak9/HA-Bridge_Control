@@ -17,7 +17,7 @@ To install in an empty directory:
 
 `$ cd /var/www/html/`
 
-`$ mkdir control`
+`$ sudo mkdir control`
 
 `$ cd /control/`
 
