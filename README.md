@@ -6,10 +6,10 @@ Code written in PHP that allows control of all configured <a href="https://githu
 ![alt tag](http://coreyswrite.com/wp-content/uploads/2016/03/X10-Bridge-Control-1.png)
 
 <h3>Prerequisite components</h3>
-* Linux box, preferably a Raspberry Pi</li>
-* Apache installed</li>
-* PHP installed</li>
-* @bwssytems <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> >= v1.1.0</li>
+* Linux box, preferably a Raspberry Pi
+* Apache
+* PHP
+* @bwssytems <a href="https://github.com/bwssytems/ha-bridge/releases">ha-bridge</a> >= v1.1.0
 
 
 <h3>Installation</h3>
