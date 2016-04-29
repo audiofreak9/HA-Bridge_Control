@@ -19,7 +19,7 @@ On an updated functioning Linux box install Apache and PHP5:
 
 `$ sudo apt-get install php5 libapache2-mod-php5 -y`
 
-Download, configure and run as per @bwssystems' ha-bridge <a href="https://github.com/bwssytems/ha-bridge>README</a> 
+Download, configure and run as per @bwssystems' ha-bridge <a href="https://github.com/bwssytems/ha-bridge">README</a> 
 
 To install in an empty directory: 
 
