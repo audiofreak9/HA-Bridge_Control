@@ -15,10 +15,10 @@ Save the code as index.php on the Apache server in the /var/www/html/ folder. It
 
 To install in an empty directory: 
 
-$ cd /var/www/html/
+`$ cd /var/www/html/`
 
-$ mkdir control
+`$ mkdir control`
 
-$ cd /control/
+`$ cd /control/`
 
-$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .
+`$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
