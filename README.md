@@ -23,7 +23,7 @@ Code written in PHP that allows control of all configured <a href="https://githu
   * `$ cd control`
   * `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
 
-NOTE: This uses the DEFAULT port 8080, if you use a different port with your ha-bridge, edit line 30 of the index.php file.
+NOTE: The config.php file uses the DEFAULT port 8080, if you use a different port with your ha-bridge, edit the config.php file accordingly.
 
 <h3>Usage</h3>
 In any browser on your device of choice (Phone, Tablet &amp; Desktop):
