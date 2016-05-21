@@ -23,7 +23,7 @@ body{margin:0;padding:10px 0 0 0}
                 <div class="panel-heading">Devices</div>
                 <div class="panel-body">
 <?php
-
+require('config.php');
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
         $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
 ?>
