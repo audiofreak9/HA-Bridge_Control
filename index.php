@@ -52,8 +52,8 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
                                                 &nbsp;<span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span>
                                          </div>
                                         <div class="col-sm-12 col-md-12" style="margin-top:10px;height:15px">
-                                                <input class="ps" id="ps<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
-                                                <input type="hidden" id="sl<?php echo $ha_devices[$x]["id"]; ?>" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
+                                                <input class="sl" id="sl<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
+                                                <input type="hidden" id="ps<?php echo $ha_devices[$x]["id"]; ?>" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                         </div>
                                         <div class="col-sm-12 col-md-12">
                                                 <div class="progress">
@@ -77,7 +77,7 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
 $(".btn").click(function() {
   var dev_id = $(this).closest("form").attr('id');
   var dev_val = $(this).val();
-  var dev_per = $('#sl' + dev_id).attr('value');
+  var dev_per = $('#ps' + dev_id).attr('value');
   var data = '{"on":';
   if(dev_val == "off") {
     percent = 0;
@@ -100,18 +100,19 @@ $(".btn").click(function() {
   });
   return false;
 });
-$('.ps').on("change", function() {
+$('.sl').on("change", function() {
     var my_id = $(this).closest("form").attr('id');
     var level = $(this).val();
-    $('#sl' + my_id).val(level);
-    $('#l' + my_id).html(level + '%').fadeIn( 400 ).delay( 800 ).fadeOut( 400 );
+    $('#ps' + my_id).val(level);
+    $('#l' + my_id).html(level + '%').fadeIn( 400 ).delay( 800 ).fadeOut( 400 ); 
 });
 function updateProgress(percent, dev_id){
     if(percent > 100) percent = 100;
     $('#prog' + dev_id).css('width', percent+'%');
     $('#prog' + dev_id).html(percent+'%');
     if(percent == 0) {
-    	$('#ps' + dev_id, '#sl' + dev_id).val('100');
+        $('#sl' + dev_id).prop("value", "100");
+        $('#ps' + dev_id).val('100');
     }
 }
 </script>
