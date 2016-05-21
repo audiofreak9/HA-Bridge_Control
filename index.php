@@ -23,18 +23,7 @@ body{margin:0;padding:10px 0 0 0}
                 <div class="panel-heading">Devices</div>
                 <div class="panel-body">
 <?php
-//Server Name variable
-$SN = $_SERVER['SERVER_NAME'];
-$rm = array($SN, "http://localhost/", "echo.php?", "action", "hu", "off", "=", "&");
-//Get the devices from the bridge, put them into an array
-$ha_devices = json_decode(file_get_contents("http://$SN:8080/api/devices"), true);
-$deviceTypes = array();
-//Get each device type into an array
-foreach ($ha_devices as $ha_device) $deviceTypes[] = $ha_device["deviceType"];
-//Sort by device type to group similar
-array_multisort($deviceTypes, SORT_DESC, $ha_devices);
-//Determine half the device count
-$halfval = ceil(count($ha_devices) / 2);
+
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
         $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
 ?>
@@ -93,7 +82,7 @@ $(".btn").click(function() {
   $.ajax({
     type: 'POST',
     dataType: 'json',
-    url: 'http://<?php echo $SN; ?>:8080/api/c/lights/' + dev_id + '/state',
+    url: 'http://<?php echo $SN; ?>:<?php echo $port; ?>/api/c/lights/' + dev_id + '/state',
     headers: {"X-HTTP-Method-Override": "PUT"},
     data: data,
     success : updateProgress(percent, dev_id)
