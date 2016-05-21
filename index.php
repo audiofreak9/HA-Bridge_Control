@@ -52,7 +52,7 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
                                                 &nbsp;<span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span>
                                          </div>
                                         <div class="col-sm-12 col-md-12" style="margin-top:10px;height:15px">
-                                                <input class="ps" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
+                                                <input class="ps" id="ps<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                                 <input type="hidden" id="sl<?php echo $ha_devices[$x]["id"]; ?>" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                         </div>
                                         <div class="col-sm-12 col-md-12">
@@ -110,6 +110,9 @@ function updateProgress(percent, dev_id){
     if(percent > 100) percent = 100;
     $('#prog' + dev_id).css('width', percent+'%');
     $('#prog' + dev_id).html(percent+'%');
+    if(percent == 0) {
+    	$('#ps' + dev_id, '#sl' + dev_id).val('100');
+    }
 }
 </script>
 </body>
