@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <link href="images/startup.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 <link rel="apple-touch-icon" href="images/x10switch_icon.png"/>
-<title>X10 Bridge Control</title>
+<title>HA-Bridge Control</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
