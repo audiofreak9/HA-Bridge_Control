@@ -20,7 +20,7 @@ body{margin:0;padding:10px 0 0 0}
 <body>
 <div class="container" role="main">
         <div class="panel panel-default">
-                <div class="panel-heading">Devices</div>
+                <div class="panel-heading">HA-Bridge Devices</div>
                 <div class="panel-body">
 <?php
 require('config.php');
