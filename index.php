@@ -27,24 +27,18 @@ require('config.php');
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
         $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
 ?>
-                <div class="col-sm-4">
+               <div class="col-sm-3">
                         <div class="row-fluid">
                                 <form class="form-inline" id="<?php echo $ha_devices[$x]["id"]; ?>">
-                                        <div class="col-sm-12 col-md-6">
-                                                <div class="label label-info col-xs-12" style="padding-top:4px">
-                                                        <?php echo str_replace(". ", ".", ucwords(str_replace(".", ". ", $ha_devices[$x]["name"]))); ?>
-                                                </div>
+                                        <div class="col-sm-12 col-md-12" style="margin-bottom:6px">
+                                                <h4><span class="label label-primary col-xs-12"><?php echo str_replace(". ", ".", ucwords(str_replace(".", ". ", $ha_devices[$x]["name"]))); ?></span></h4>
                                         </div>
-                                        <div class="col-sm-12 col-md-6">
-                                                <button type="submit" class="act btn btn-xs btn-success" name="action" value="on" data-toggle="tooltip" title="action">On</button>
-                                                <button type="submit" class="act btn btn-xs btn-danger" name="action" value="off" data-toggle="tooltip" title="action">Off</button>
-                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="on" data-toggle="tooltip" title="update state">On</button>
-                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="off" data-toggle="tooltip" title="update state">Off</button>
+                                        <div class="col-sm-12 col-md-12">
+                                                <button type="submit" class="act btn btn-xs btn-success" name="action" value="on" data-toggle="tooltip" title="action"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> On</button>
+                                                <button type="submit" class="act btn btn-xs btn-danger" name="action" value="off" data-toggle="tooltip" title="action"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Off</button>
+                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="on" data-toggle="tooltip" title="update"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> On</button>
+                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="off" data-toggle="tooltip" title="update"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Off</button>
                                                 &nbsp;<span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span>
-                                         </div>
-                                        <div class="col-sm-12 col-md-12" style="margin-top:10px;height:15px">
-                                                <input class="sl" id="sl<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
-                                                <input type="hidden" id="ps<?php echo $ha_devices[$x]["id"]; ?>" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                         </div>
                                         <div class="col-sm-12 col-md-12">
                                                 <div class="progress">
@@ -52,6 +46,10 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
                                                                <?php echo $dev_level . '%'; ?>
                                                         </div>
                                                 </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12" style="margin:5px 0 10px;height:15px">
+                                                <input class="sl" id="sl<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
+                                                <input type="hidden" id="ps<?php echo $ha_devices[$x]["id"]; ?>" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                         </div>
                                 </form>
                         </div>
