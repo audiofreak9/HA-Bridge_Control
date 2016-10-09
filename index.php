@@ -9,7 +9,7 @@
 <link href="images/startup.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 <link rel="apple-touch-icon" href="images/x10switch_icon.png"/>
 <title>HA-Bridge Control</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <style>
@@ -36,8 +36,10 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
                                                 </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
-                                                <button type="submit" class="btn btn-xs btn-success" name="action" value="on">On</button>
-                                                <button type="submit" class="btn btn-xs btn-danger" name="action" value="off">Off</button>
+                                                <button type="submit" class="act btn btn-xs btn-success" name="action" value="on" data-toggle="tooltip" title="action">On</button>
+                                                <button type="submit" class="act btn btn-xs btn-danger" name="action" value="off" data-toggle="tooltip" title="action">Off</button>
+                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="on" data-toggle="tooltip" title="update state">On</button>
+                                                <button type="submit" class="upd btn btn-xs btn-info" name="action" value="off" data-toggle="tooltip" title="update state">Off</button>
                                                 &nbsp;<span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span>
                                          </div>
                                         <div class="col-sm-12 col-md-12" style="margin-top:10px;height:15px">
@@ -60,8 +62,8 @@ for($x = 0; $x <= count($ha_devices) - 1; $x++) {
                 </div>
         </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js?ver=CDN"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 var SN = '<?php echo $SN; ?>';
 var port = '<?php echo $port; ?>';
