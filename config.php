@@ -1,6 +1,6 @@
 <?php
 //Update the $port variable to match your chosen ha-bridge port
-$port = 8080;
+$port = 80;
 //Get Server Name (IP)
 $SN = $_SERVER['SERVER_NAME'];
 //Get the devices from the bridge, put them into an array
