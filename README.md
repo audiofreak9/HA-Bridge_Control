@@ -27,7 +27,7 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
   * `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
 5. Set up and configuration:
   * `$ sudo nano config.php`
-  * The DEFAULT ha-bridge IP is set to auto-detect `$SN = $_SERVER['SERVER_NAME'];`.  Otherwise set according to your ha-bridge installation IP, example: `$SN = "192.168.1.2;`
+  * The DEFAULT ha-bridge IP is set to auto-detect `$SN = $_SERVER['SERVER_NAME'];`.  Otherwise set according to your ha-bridge installation IP, example: `$SN = "192.168.1.2";`
   * The DEFAULT ha-bridge port is 80, set according to your ha-bridge installation port
   * The DEFAULT username is 'username', set according to your preference
   * The DEFAULT password is 'password', set according to your preference
