@@ -1,8 +1,8 @@
 <?php
+//Update the $SN variable to match your ha-bridge Server Name (IP)
+$SN = $_SERVER['SERVER_NAME'];
 //Update the $port variable to match your chosen ha-bridge port
 $port = 80;
-//Update the $SN variable to match your ha-bridge Server Name (IP)
-$SN = "192.168.1.19";
 //Update the username and password to your choice
 $user = 'username';
 $pass = 'password';
