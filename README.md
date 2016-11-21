@@ -37,5 +37,7 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
 In any browser on your device of choice (Phone, Tablet &amp; Desktop):
 
 * `http://<host IP>:<Apache port>/control`
+* The "Power" icon buttons operate the device
+* The "Wrench" icon buttons update the device's state in the ha-bridge
 
 > TIP: You can save the page to your homescreen on mobile devices and it will function like an app.
