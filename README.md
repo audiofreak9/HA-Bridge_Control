@@ -17,7 +17,7 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
   * `$ sudo apt-get install apache2 -y`
   * `$ sudo apt-get install php5 libapache2-mod-php5 -y`
 2. The ha-bridge now uses port 80 by default, change Apache default port:
-  * `sudo nano /etc/apache2/ports.conf` changing `Listen 80` to `Listen 8080`, save and exit `CTRL + X` follow save promt
+  * `sudo nano /etc/apache2/ports.conf` changing `Listen 80` to `Listen 8080`, save and exit `CTRL + X` follow save prompt
   * Restart Apache `sudo /etc/init.d/apache2 reload`
 3. Download, configure and run the ha-bridge as per @bwssystems' <a href="https://github.com/bwssytems/ha-bridge">README</a> 
 4. Install the HA-Brige Control in an empty directory:
