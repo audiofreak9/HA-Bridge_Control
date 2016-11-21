@@ -1,6 +1,6 @@
         <form class="form-inline" id="<?php echo $ha_devices[$x]["id"]; ?>">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="panel panel-info clearfix">
+                <div class="panel panel-default clearfix">
                         <div class="panel-heading clearfix">
                                 <div class="col-md-8 col-lg-8 pull-left"><div class="hideOverflow"><?php echo str_replace(". ", ".", ucwords(str_replace(".", ". ", $ha_devices[$x]["name"]))); ?></div></div>
                                 <div class="col-md-4 col-lg-4 pull-right"><span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span></div>
