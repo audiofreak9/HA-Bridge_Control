@@ -1,3 +1,7 @@
+<?php
+require_once('config.php');
+if (($_COOKIE[username] == $user) && ($_COOKIE[password] == md5($pass))) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,10 +37,9 @@ body{margin:0;padding:10px 0 0 0}
 <body>
 <div class="container" role="main">
 <?php
-require_once('config.php');
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
-    $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
-    require_once('loop.php');
+        $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
+        require('loop.php');
 }
 ?>
 </div>
@@ -49,3 +52,8 @@ var port = '<?php echo $port; ?>';
 <script src="js/controlscript.js"></script>
 </body>
 </html>
+<?php
+}else{
+   header('Location: login.php');
+}
+?>
