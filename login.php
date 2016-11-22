@@ -34,8 +34,8 @@ body{margin:0;padding:10px 0 0 0}
 .min-height{height:35px}
 </style>
 <body>
-<div class="container" role="main"
-        <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-4">
+<div class="container" role="main">
+        <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-3">
                 <div class="panel panel-info clearfix">
                         <div class="panel-heading clearfix">Login</div>
                         <div class="panel-body row-fluid clearfix">
