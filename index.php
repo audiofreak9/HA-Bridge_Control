@@ -38,7 +38,7 @@ body{margin:0;padding:10px 0 0 0}
 <div class="container" role="main">
 <?php
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
-        $dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
+        $dev_level = (is_numeric($ha_devices[$x]["deviceState"]["bri"])) ? round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100) : 0;
         require('loop.php');
 }
 ?>
