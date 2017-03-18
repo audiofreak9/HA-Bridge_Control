@@ -13,18 +13,23 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
 
 
 <h3>Installation</h3>
+
 1. On an updated functioning Linux box install Apache and PHP5:
   * `$ sudo apt-get install apache2 -y`
   * `$ sudo apt-get install php5 libapache2-mod-php5 -y`
+  
 2. The ha-bridge now uses port 80 by default, change Apache default port:
   * `sudo nano /etc/apache2/ports.conf` changing `Listen 80` to `Listen 8080`, save and exit `CTRL + X` follow save prompt
   * Restart Apache `sudo /etc/init.d/apache2 reload`
+  
 3. Download, configure and run the ha-bridge as per @bwssystems' <a href="https://github.com/bwssytems/ha-bridge">README</a> 
+
 4. Install the HA-Brige Control in an empty directory:
   * `$ cd /var/www/html/`
   * `$ sudo mkdir control`
   * `$ cd control`
   * `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
+  
 5. Set up and configuration:
   * `$ sudo nano config.php`
   * The DEFAULT ha-bridge IP is set to auto-detect `$SN = "localhost";`.  Otherwise set according to your ha-bridge installation IP if on another machine, example: `$SN = "192.168.1.2";`
