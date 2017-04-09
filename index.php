@@ -32,16 +32,39 @@ body{margin:0;padding:10px 0 0 0}
     width:100%;
     display:block;
 }
+.glyphicon.glyphicon-dot-on:before {
+    content: "\25cf";
+    font-size: 1.5em;
+    color:green;
+}
+.glyphicon.glyphicon-dot-off:before {
+    content: "\25cf";
+    font-size: 1.5em;
+    color:red;
+}
 </style>
 </head>
 <body>
 <div class="container" role="main">
 <?php
 for($x = 0; $x <= count($ha_devices) - 1; $x++) {
+        //$dev_level = round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100);
         $dev_level = (is_numeric($ha_devices[$x]["deviceState"]["bri"])) ? round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100) : 0;
+        $bar_level = ($ha_devices[$x]["deviceState"]["on"] == 1) ? round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100) : 0 ;
         require('loop.php');
 }
 ?>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="panel panel-default clearfix">
+                        <div class="panel-heading clearfix">
+                                <div class="col-md-8 col-lg-8 pull-left"><div class="hideOverflow">HA-Bridge</div></div>
+                                <div class="col-md-4 col-lg-4 pull-right"></div>
+                        </div>
+                        <div class="panel-body row-fluid">
+                                <div class="col-sm-12 col-md-5 col-lg-4 clearfix"><a href="http://<?php echo $SN; ?>">HA-Bridge</a></div>
+                        </div>
+                </div>
+        </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

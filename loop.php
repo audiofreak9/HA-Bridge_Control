@@ -2,7 +2,9 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="panel panel-default clearfix">
                         <div class="panel-heading clearfix">
-                                <div class="col-md-8 col-lg-8 pull-left"><div class="hideOverflow"><?php echo str_replace(". ", ".", ucwords(str_replace(".", ". ", $ha_devices[$x]["name"]))); ?></div></div>
+                                <div class="col-md-8 col-lg-8 pull-left">
+                                        <div class="hideOverflow"><?php echo ($ha_devices[$x]["deviceState"]["on"] == 1) ?  "<span class=\"glyphicon glyphicon-dot-on\" id=\"one" . $ha_devices[$x]["id"] . "\"></span>" : "<span class=\"glyphicon glyphicon-dot-off\" id=\"one" . $ha_devices[$x]["id"] . "\"></span>" ; ?>&nbsp;<?php echo str_replace(". ", ".", ucwords(str_replace(".", ". ", $ha_devices[$x]["name"])));?></div>
+                                </div>
                                 <div class="col-md-4 col-lg-4 pull-right"><span class="badge l" id="l<?php echo $ha_devices[$x]["id"]; ?>"><?php echo $dev_level . '%'; ?></span></div>
                         </div>
                         <div class="panel-body row-fluid">
@@ -18,12 +20,12 @@
                                 </div>
                                 <div class="col-sm-12 col-md-7 col-lg-8">
                                         <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" id="prog<?php echo $ha_devices[$x]["id"]; ?>" role="progressbar" aria-valuenow="<?php echo $dev_level; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $dev_level; ?>%">
-                                                              <?php echo $dev_level . '%'; ?>
+                                                <div class="progress-bar progress-bar-success progress-bar-striped" id="prog<?php echo $ha_devices[$x]["id"]; ?>" role="progressbar" aria-valuenow="<?php echo $bar_level; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $bar_level; ?>%">
+                                                              <?php echo $bar_level . '%'; ?>
                                                 </div>
                                         </div>
                                         <div class="min-height">
-                                                <input class="sl" id="sl<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||($ha_devices[$x]["dimUrl"]))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
+                                                <input class="sl" id="sl<?php echo $ha_devices[$x]["id"]; ?>" type="<?php echo ((strpos($ha_devices[$ha_val]["onUrl"],"percent") > 0)||(($ha_devices[$x]["dimUrl"])&&($ha_devices[$x]["dimUrl"] != "[]")))? "range" : "hidden" ; ?>" min="1" max="100" step="1" value="<?php echo (($dev_level < 100) && ($dev_level != 0)) ? $dev_level : "100"; ?>" />
                                         </div>
                                 </div>
                         </div>

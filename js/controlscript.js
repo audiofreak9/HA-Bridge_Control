@@ -20,7 +20,7 @@ $(".act").click(function() {
     url: 'http://' + SN + ':' + port + '/api/c/lights/' + dev_id + '/state',
     headers: {"X-HTTP-Method-Override": "PUT"},
     data: data,
-    success : updateProgress(percent, dev_id)
+    success : updateProgress(percent, dev_id, dev_val)
   });
   return false;
 });
@@ -46,7 +46,7 @@ $(".upd").click(function() {
     url: 'http://' + SN + ':' + port + '/api/c/lights/' + dev_id + '/bridgeupdatestate',
     headers: {"X-HTTP-Method-Override": "PUT"},
     data: data,
-    success : updateProgress(percent, dev_id)
+    success : updateProgress(percent, dev_id, dev_val)
   });
   return false;
 });
@@ -56,12 +56,17 @@ $('.sl').on("change", function() {
     $('#ps' + my_id).val(level);
     $('#l' + my_id).html(level + '%').fadeIn( 400 ).delay( 800 ).fadeOut( 400 );
 });
-function updateProgress(percent, dev_id){
+function updateProgress(percent, dev_id, dev_val){
+    if(dev_val == "on") {
+        $('#one' + dev_id).removeClass('glyphicon-dot-off').addClass('glyphicon-dot-on');
+    }else{
+        $('#one' + dev_id).removeClass('glyphicon-dot-on').addClass('glyphicon-dot-off');
+    }
     if(percent > 100) percent = 100;
     $('#prog' + dev_id).css('width', percent+'%');
     $('#prog' + dev_id).html(percent+'%');
     if(percent == 0) {
-        $('#sl' + dev_id).prop("value", "100");
-        $('#ps' + dev_id).val('100');
+        //$('#sl' + dev_id).prop("value", dev_per);
+        //$('#ps' + dev_id).val(dev_per);
     }
 }

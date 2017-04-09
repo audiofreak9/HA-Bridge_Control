@@ -10,7 +10,7 @@ if (($_POST['username'] == $user) && ($_POST['password'] == $pass)) {
         setcookie('username', $_POST['username']);
         setcookie('password', md5($_POST['password']));
      }
-     header('Location: /control');
+     header('Location: /');
 }
 ?>
 <!DOCTYPE html>
