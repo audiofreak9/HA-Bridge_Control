@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once 'includes/config.php';
 if (($_POST['username'] == $user) && ($_POST['password'] == $pass)) {
     if (isset($_POST['rememberme'])) {
         /* Set cookie to last 1 year */
@@ -35,15 +35,15 @@ body{margin:0;padding:10px 0 0 0}
 </style>
 <body>
 <div class="container" role="main">
-        <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-3">
-                <div class="panel panel-info clearfix">
-                        <div class="panel-heading clearfix">Login</div>
-                        <div class="panel-body row-fluid clearfix">
-                                <form name="login" method="post" class="form-inline" action="login.php">
-                                <div class="col-xs-12 col-sm-3 col-md-4 pull-left min-height">Username: </div><div class="col-xs-12 col-sm-9 col-md-8 pull-left min-height"><input type="text" name="username"></div>
-                                <div class="col-xs-12 col-sm-3 col-md-4 pull-left min-height">Password: </div><div class="col-xs-12 col-sm-9 col-md-8 pull-left min-height"><input type="password" name="password"></div>
-                                <div class="col-xs-12 min-height clear">Remember Me: <input type="checkbox" name="rememberme" value="1"></div>
-                                <div class="col-xs-12 min-height"><button type="submit" class="btn btn-xs">Login</button></div>
+        <div class="col-xs-12 col-xs-offset-0 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+                <div class="panel panel-primary clearfix">
+                        <div class="panel-heading clearfix text-center"><h4>HA Bridge Control Login <span class="glyphicon glyphicon-log-in"></span></h4></div>
+                        <div class="panel-body row-fluid form-group clearfix">
+                                <form name="login" method="post" class="form" action="login.php">
+                                <div class="form-group"><label for="username"><span class="glyphicon glyphicon-user"></span> Username:</label><input type="text" class="form-control input-lg" name="username" placeholder="Username"></div>
+                                <div class="form-group"><label for="password"><span class="glyphicon glyphicon-lock"></span> Password:</label><input type="password" class="form-control input-lg" name="password" placeholder="Password"></div>
+                                <div class="form-group"><input type="checkbox" name="rememberme" value="1">&nbsp;&nbsp;Remember Me</div>
+                                <div><button type="submit" class="btn btn-default btn-block input-lg">Login</button></div>
                                 </form>
                         </div>
                 </div>

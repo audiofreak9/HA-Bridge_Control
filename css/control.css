@@ -1,0 +1,15 @@
+body{margin:0;padding:10px 0 0 0}
+#field,#sort{margin-top:3px}
+.l{display:none}
+.btn{margin-bottom:4px}
+.btn-group-xs{margin-right:4px}
+.progress{margin-bottom:10px}
+.min-height{height:15px}
+.control .alink{height:26px;padding-top:8px}
+.control .panel-heading{height:47px;padding-top:16px}
+.hideOverflow {overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100%;display:block;}
+.glyphicon.glyphicon-dot-on:before {content: "\25cf";font-size: 1.5em;color:green;}
+.glyphicon.glyphicon-dot-off:before {content: "\25cf";font-size: 1.5em;color:red;}
+.glyphicon.glyphicon-dot-pool:before {content: "\25cf";font-size: 1.5em;color:#0275d8;}
+.slider.slider-horizontal {width: 100%}
+.slider-handle {background:#5cb85c}

@@ -1,13 +1,28 @@
 <?php
-require_once('config.php');
+//Logout the user when logout is clicked
+if ($_GET['logout'] == "true") {
+        setcookie('username', "username", time()-60);
+        setcookie('password', "invalid", time()-60);
+        header('Location: http://' . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'] . '/login.php');
+        exit;
+}
+//Get the config settings
+require_once 'includes/config.php';
+//Get the functions file
+require_once 'includes/functions.php';
 if (($_COOKIE[username] == $user) && ($_COOKIE[password] == md5($pass))) {
+        //Get & build variables
+        $sort = "SORT_";
+        $sort .= ($_GET['sort'] != "") ? $_GET['sort'] : "ASC" ;
+        $field = ($_GET['field'] != "") ? $_GET['field'] : "name" ;
+        $sorts = array("ASC","DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <link href="images/startup.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
@@ -17,56 +32,19 @@ if (($_COOKIE[username] == $user) && ($_COOKIE[password] == md5($pass))) {
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<style>
-body{margin:0;padding:10px 0 0 0}
-.l{display:none}
-.btn{margin-bottom:4px}
-.btn-group-xs{margin-right:4px}
-.progress{margin-bottom:10px}
-.min-height{height:15px}
-.hideOverflow
-{
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    width:100%;
-    display:block;
-}
-.glyphicon.glyphicon-dot-on:before {
-    content: "\25cf";
-    font-size: 1.5em;
-    color:green;
-}
-.glyphicon.glyphicon-dot-off:before {
-    content: "\25cf";
-    font-size: 1.5em;
-    color:red;
-}
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css">
+<link rel="stylesheet" href="css/control.css">
 </head>
 <body>
 <div class="container" role="main">
 <?php
-for($x = 0; $x <= count($ha_devices) - 1; $x++) {
-        $dev_level = (is_numeric($ha_devices[$x]["deviceState"]["bri"])) ? round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100) : 0;
-        $bar_level = ($ha_devices[$x]["deviceState"]["on"] == 1) ? round(($ha_devices[$x]["deviceState"]["bri"] / 255)*100) : 0 ;
-        require('loop.php');
-}
+//Get the devices
+include 'includes/get_devices.php';
 ?>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="panel panel-default clearfix">
-                        <div class="panel-heading clearfix">
-                                <div class="col-md-8 col-lg-8 pull-left"><div class="hideOverflow">HA-Bridge</div></div>
-                                <div class="col-md-4 col-lg-4 pull-right"></div>
-                        </div>
-                        <div class="panel-body row-fluid">
-                                <div class="col-sm-12 col-md-5 col-lg-4 clearfix"><a href="http://<?php echo $SN; ?>">HA-Bridge</a></div>
-                        </div>
-                </div>
-        </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
 <script>
 var SN = '<?php echo $SN; ?>';
 var port = '<?php echo $port; ?>';
