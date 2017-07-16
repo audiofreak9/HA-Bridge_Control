@@ -29,6 +29,7 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
   * `$ ls -l`
   * Be sure to remove all files listed using the following command structure
   * `$ sudo rm index.html`  
+  * Now clone the control code to your Raspberry Pi
   * `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
   
 5. Set up and configuration:
