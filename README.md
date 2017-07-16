@@ -26,8 +26,9 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
 
 4. Install the HA-Brige Control in an empty directory:
   * `$ cd /var/www/html/`
-  * `$ sudo mkdir control`
-  * `$ cd control`
+  * `$ ls -l`
+  * Be sure to remove all files listed using the following command structure
+  * `$ sudo rm index.html`  
   * `$ sudo git clone https://github.com/audiofreak9/HA-Bridge_Control .`
   
 5. Set up and configuration:
