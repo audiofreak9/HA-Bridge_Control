@@ -10,7 +10,8 @@ if (($_POST['username'] == $user) && ($_POST['password'] == $pass)) {
         setcookie('username', $_POST['username']);
         setcookie('password', md5($_POST['password']));
      }
-     header('Location: /');
+     $url = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+     header('Location: $url');
 }
 ?>
 <!DOCTYPE html>
