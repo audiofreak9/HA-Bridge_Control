@@ -37,8 +37,8 @@ Code written in PHP that allows control of all @bwssytems <a href="https://githu
   * `$ sudo nano config.php`
   * The DEFAULT ha-bridge IP is set to auto-detect `$SN = "localhost";`.  Otherwise set according to your ha-bridge installation IP if on another machine, example: `$SN = "192.168.1.2";`
   * The DEFAULT ha-bridge port is 80, set according to your ha-bridge installation port
-  * The DEFAULT username is 'username', set according to your HA Bridge username (if set) -OR- your preference
-  * The DEFAULT password is 'password', set according to your HA Bridge password (if set) -OR- your preference
+  * The DEFAULT username is 'username', set according to your <a href="https://github.com/bwssytems/ha-bridge#the-security-dialog">HA Bridge username (if set)</a> -OR- your preference
+  * The DEFAULT password is 'password', set according to your <a href="https://github.com/bwssytems/ha-bridge#the-security-dialog">HA Bridge password (if set)</a> -OR- your preference
 
 
 <h3>Usage</h3>
