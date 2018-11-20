@@ -49,7 +49,7 @@ include 'includes/get_devices.php';
 var SN = '<?php echo $SN; ?>';
 var port = '<?php echo $port; ?>';
 </script>
-<script src="js/controlscript.js"></script>
+<script src="js/control.js"></script>
 </body>
 </html>
 <?php
