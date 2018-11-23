@@ -29,9 +29,6 @@ if (($_COOKIE[username] == $user) && ($_COOKIE[password] == md5($pass))) {
 <link rel="apple-touch-icon" href="images/x10switch_icon.png"/>
 <title>HA Bridge Control</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.min.css">
 <link rel="stylesheet" href="css/control.css">
 </head>
